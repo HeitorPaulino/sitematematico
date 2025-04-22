@@ -12,9 +12,9 @@ function iniciarJogo(modo) {
 
 // Função que gera nova pergunta e mostra na tela
 function novaPergunta() {
-    const numeros = gerarnumeros(modoAtual);
+    const numeros = gerarNumeros(modoAtual);
     const operacao = escolherOperacao();
-    const perguntaTexto = '${numeros.num1} ${operacao} ${numeros.num2}';
+    const perguntaTexto = `${numeros.num1} ${operacao} ${numeros.num2}`;
 
     respostaCorreta: calcularResposta,(numeros.num1, numeros.num2, operacao);
 
@@ -55,10 +55,10 @@ function calcularResposta(n1, n2, op) {
 function verificarResposta() {
     const respostaUsuario = parseInt(document.getElementById("resposta").value);
     if (respostaUsuario === respostaCorreta) {
-        document.getElementById("resultado").innerText = "Resposta Correta!";
+        document.getElementById("resultado").innerText = `Resposta Correta!`;
         pontuacao += 10;
     } else {
-        document.getElementById("resultado").innerText = 'Errado! A resposta era ${respostaCorreta}';
+        document.getElementById("resultado").innerText = `Errado! A resposta era ${respostaCorreta}`;
         pontuacao -= 5;
     }
     document.getElementById("pontuacao").innerText = pontuacao;
